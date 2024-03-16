@@ -3,7 +3,7 @@
  padding: 0;
  box-sizing: border-box;
  color: white;
- font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ font-family: cursive;
 }
 
 .main {
@@ -15,7 +15,7 @@
  position: relative;
 }
 
-.game-board {
+.playing-board {
  width: 80%;
  height: 90%;
  margin: auto;
@@ -31,19 +31,84 @@
  justify-content: space-between;
 }
 
-.playing-board {
+.game-board {
  width: 90%;
  height: 85%;
  border: 3px solid gold;
  margin: auto;
+ position: relative;
 }
 
 .arena {
  display: grid;
- grid-template-columns: repeat(15, 1fr);
- grid-template-rows: repeat(13, 1fr);
+ grid-template-columns: repeat(22, 1fr);
+ grid-template-rows: repeat(11, 1fr);
  gap: 2px;
  width: 100%;
  height: 100%;
 }
 
+.instructions {
+ position: absolute;
+ width: 300px;
+ height: 150px;
+ text-align: center;
+ bottom: 50px;
+ right: 50px;
+}
+
+.instructions h3 {
+ color: rgb(220, 149, 17);
+ text-shadow: 0 0 5px #171717, 0 0 10px #000000, 0 0 15px rgb(0, 0, 0), 0 0 20px rgb(220, 149, 17), 0 0 25px rgb(220, 149, 17), 0 0 30px rgb(220, 149, 17), 0 0 35px rgb(220, 149, 17)
+}
+
+.keys {
+ height: 50px;
+ position: absolute;
+ bottom: 30px;
+ left: 40px;
+}
+
+.keys span {
+ font-size: 25px;
+ background-color: white;
+ color: black;
+ padding: 10px 15px;
+ border-radius: 10px;
+
+}
+
+.snake {
+ border: 5px solid gold;
+ border-radius: 10px;
+ position: relative;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.blink-div {
+ width: 5px;
+ height: 20px;
+ background-color: yellow;
+ border-radius: 10px;
+ animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+ 0% {
+  scale: 1;
+ }
+
+ 50% {
+  scale: 0.5;
+ }
+
+ 100% {
+  scale: 1;
+ }
+}
+
+.food {
+ background-color: antiquewhite;
+}

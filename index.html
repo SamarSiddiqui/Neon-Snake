@@ -2,39 +2,31 @@
 <html lang="en">
 
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Snake</title>
- <link rel="stylesheet" href="style.css">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Snake</title>
+      <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+      <div class="main">
+            <div class="game-board">
 
- <div class="main">
-  <div class="playing-board">
-   <div class="score-area">
-    <h2>Score:000</h2>
-    <h2>Best:20</h2>
-   </div>
-   <div class="game-board">
-    <div class="arena" id="game-area">
-
-     <div class="instructions" id="game-rules">
-      <h3>USE THE KEYS "W-A-S-D" TO MOVE THE SNAKE</h3>
-      <div class="keys">
-       <span>W</span>
-       <span>A</span>
-       <span>S</span>
-       <span>D</span>
+                  <div class="scores">
+                        <h2 id="score"> Score:000</h2>
+                        <h2 id="high-score"> High Score:000</h2>
+                  </div>
+                  <div class="game-arena" id="game-arena"></div>
+            </div>
       </div>
-     </div>
-    </div>
-   </div>
 
-  </div>
- </div>
-
- <script src="index.js"></script>
+      <div class="instructions" id="game-instructions">
+            Press spacebar to start the game
+            <div class="keys">
+                  Play with W,S,A,D
+            </div>
+      </div>
+      <script src="index.js"></script>
 </body>
 
 </html>

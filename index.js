@@ -6,6 +6,14 @@ const foodAudio = new Audio('./sound/food.mp3');
 const score = document.getElementById('score');
 const highScoreText = document.getElementById('high-score');
 
+// Initialize high score from local storage or set it to 0 if not present
+let highScore = localStorage.getItem('highScore');
+if (highScore === null) {
+    highScoreText.textContent = `HighScore: 0`;
+} else {
+    highScoreText.textContent = `High Score: ${parseInt(highScore).toString().padStart(3,'0')}`;
+}
+
 // Game Variables
 let snake = [{ x: 8, y: 7 }]; // Initial position of the snake
 let gridSize = 15; // Size of the game grid
@@ -14,7 +22,6 @@ let direction = 'right'; // Initial direction of the snake
 let gameInterval; // Interval for game loop
 let gameSpeed = 300; // Initial speed of the game
 let gameStarted = false; // Flag to indicate if the game has started
-let highScore = 0; // Initialize high score
 
 // Draw Function - updates the game board with current state
 function draw() {
@@ -143,7 +150,7 @@ document.addEventListener('keydown', keyHandler);
 // Increase game speed as the snake grows
 function increaseGameSpeed() {
   if (snake.length > 5) {
-    gameSpeed -= 5;
+    gameSpeed -= 10;
   }
 }
 
@@ -189,11 +196,12 @@ function updateScore() {
   score.innerHTML = `Score: ${currentScore.toString().padStart(3, '0')}`;
 }
 
-// Update the high score display
+// Update the high score display and store it in local storage
 function updateHighScore() {
   let currentScore = snake.length - 1;
   if (currentScore > highScore) {
     highScore = currentScore;
     highScoreText.innerHTML = `High Score: ${currentScore.toString().padStart(3, '0')}`;
+    localStorage.setItem('highScore', highScore); // Store high score in local storage
   }
 }

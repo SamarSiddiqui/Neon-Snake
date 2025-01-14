@@ -8,55 +8,63 @@
 }
 
 .main {
- width: 100vw;
- height: 100vh;
- background-color: black;
- display: flex;
- align-items: center;
- position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, #050505e2 0%, #2e2d2d 40%, #1C1C1C 150%),linear-gradient(to top, rgba(219, 216, 216, 0.4) 0%, rgba(0, 0, 0, 0.25) 200%);
+    background-blend-mode: multiply;
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
 .game-board {
- width: 800px;
- height: 650px;
- margin: auto;
- border: 2px solid wheat;
+    width: 50%;
+    height: 80%;
+    margin: auto;
+    border: 2px solid wheat;
+    border-radius: 20px;
 }
 
 .scores {
- width: 95%;
- height: 50px;
- margin: auto;
- display: flex;
- align-items: center;
- justify-content: space-between;
+    width: 95%;
+    height: 50px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: clamp(10px,2vw,15px);
+
+    
 }
 
 .game-arena {
- width: 700px;
- height: 550px;
- border: 3px solid gold;
- margin: auto;
- display: grid;
- grid-template-columns: repeat(15, 1fr);
- grid-template-rows: repeat(15, 1fr);
+    
+    width: 90%;
+    height: 85%;
+    border: 3px solid gold;
+    margin: auto;
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+    border-radius: 5px;
 }
 
 .instructions {
- position: absolute;
- text-align: center;
- top: 55%;
- left: 50%;
+    position: absolute;
+    text-align: center;
+    top: 55%;
+    left: 50%;
  transform: translate(-50%, -50%);
- font-size: 30px;
+ font-size: clamp(10px,2.5vw,30px);
 }
 
 .instructions::first-line {
- color: yellowgreen;
+    color: yellowgreen;
 }
 
 .instructions {
- color: rgb(29, 28, 27);
+    color: rgb(29, 28, 27);
  text-shadow: 0 0 1px #fff, 0 0 3px #fff, 0 0 55px rgb(78, 74, 74);
  font-weight: 600;
 }
@@ -87,22 +95,25 @@
  white-space: nowrap;
  transform: translate(-50%, -50%);
  color: rgb(184, 66, 66);
+ 
 }
 
-@media screen and (max-width: 1250px) {
-
- .game-board,
- .instructions {
-  display: none;
- }
-
- .warning-text {
-  display: block;
+@media screen and (max-width: 500px) {
+    
+    .game-board,
+    .instructions {
+        display: none;
+        opacity: 0;
+    }
+    
+    .warning-text {
+        display: block;
+        font-size: clamp(20px,0.5vw,30px);
  }
 }
 
-@media screen and (max-width: 450px) {
+/* @media screen and (max-width: 450px) {
  .warning-text {
   font-size: 27px;
  }
-}
+} */

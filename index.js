@@ -1,8 +1,8 @@
 // Constants for DOM elements
 const gameBoard = document.getElementById('game-arena');
 const instruction = document.getElementById('game-instructions');
-const gameOverAudio = new Audio('./sound/gameover.mp3');
-const foodAudio = new Audio('./sound/food.mp3');
+const gameOverAudio = new Audio('./assets/sound/gameover.mp3');
+const foodAudio = new Audio('./assets/sound/food.mp3');
 const score = document.getElementById('score');
 const highScoreText = document.getElementById('high-score');
 
